@@ -25,7 +25,7 @@ function generateHashtag(str) {
         const others = element.slice(1)
         result = result + capitalize + others;
     });
-    result.length > 140 || !str || !result ? false : result;  
+    result.length > 140 || !str || !result || result === '#' ? false : result;  
   }
 
   generateHashtag("code" + " ".repeat(140) + "wars")
