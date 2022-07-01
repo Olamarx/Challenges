@@ -13,8 +13,6 @@
 // " Hello there thanks for trying my Kata"  =>  "#HelloThereThanksForTryingMyKata"
 // "    Hello     World   "                  =>  "#HelloWorld"
 // ""                                        =>  false
-
-
 function generateHashtag(str) {
   
     const split = str.split(' ')
