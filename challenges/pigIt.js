@@ -13,12 +13,15 @@ function pigIt(str){
         const first = element.charAt(0)
         const len = element.length
         const others =  element.slice(1)
-        const thersLen = others.length + 1
-        console.log(thersLen)
+
         const checkothers = element.charAt(len - 1) === 'y' && element.charAt(len - 2) === 'a' ? element : others;
         const checkFir = element.charAt(len - 1) === 'y' && element.charAt(len - 2) === 'a' ? '' : first;
-        // const checkLast = others || others === /a-z/ ? 'ay' : ''
-        result.push(`${checkothers}${checkFir}${(others || others === /a-z/) &&  (thersLen-1 !== 'y') ? 'ay' : ''}`)
+
+        const addOrNot = (element.charAt(len - 1) !== 'y' && element.charAt(len - 2) !== 'a') ? 'ay' : '';
+        
+        result.push(`${checkothers}${checkFir}${addOrNot || others !== /a-z/ ? '' : 'ay' }`)
+
+
     });
     console.log(result.join(' '))
   }
