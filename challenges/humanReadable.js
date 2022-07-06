@@ -16,23 +16,21 @@ function humanReadable (seconds) {
     } 
 
     let hours = Math.floor(seconds / 3600)
-     seconds = seconds - (hours * 3600)
+    let minutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60)
+    let numSeconds = (((seconds % 31536000) % 86400) % 3600) % 60
 
      if (hours < 10) {
         hours = '0' + hours
      }
 
-     let minutes = Math.floor(hours / 60)
-     seconds = seconds - (minutes * 60)
-
      if (minutes < 10) {
         minutes = '0' + minutes
      }
 
-     if (seconds < 10){
-        seconds = '0' + seconds
+     if (numSeconds < 10){
+        numSeconds = '0' + numSeconds
      }
 
-     return `${hours}:${minutes}:${seconds}`
+     return `${hours}:${minutes}:${numSeconds}`
   }
 
